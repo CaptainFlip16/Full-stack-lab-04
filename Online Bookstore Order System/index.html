@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Bookstore Order System</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1>📚 Online Bookstore Management System</h1>
+      <p>Lab 4 Case Study — Inventory, Order Processing & Reporting</p>
+    </header>
+
+    <!-- Revenue & System Metrics Header -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <span class="label">Total Processed Revenue</span>
+        <h2 id="totalRevenue">$0.00</h2>
+      </div>
+      <div class="metric-card">
+        <span class="label">Orders Processed</span>
+        <h2 id="ordersProcessedCount">0</h2>
+      </div>
+      <div class="metric-card">
+        <span class="label">Catalog Titles</span>
+        <h2 id="catalogCount">0</h2>
+      </div>
+    </section>
+
+    <div class="main-layout">
+      <!-- Catalog Display -->
+      <section class="section-block">
+        <div class="section-title">
+          <h2>Book Catalog</h2>
+          <span class="badge-neutral" id="lowStockAlert">0 low stock</span>
+        </div>
+        <div class="book-grid" id="catalogGrid"></div>
+      </section>
+
+      <!-- Sidebar Actions & Batch Processing -->
+      <aside class="sidebar">
+        <div class="card-box">
+          <h3>Order Processing System</h3>
+          <p class="subtext">Execute Task 2 & 3 batch validation</p>
+          <button id="processBatchBtn" class="btn btn-primary">Process Pending Orders Batch</button>
+        </div>
+
+        <div class="card-box">
+          <h3>Task 5 Report Generator</h3>
+          <p class="subtext">Filter low stock by category and sort ascending</p>
+          <div class="form-group">
+            <label for="reportCategory">Category:</label>
+            <select id="reportCategory">
+              <option value="Programming">Programming</option>
+              <option value="Design">Design</option>
+              <option value="Database">Database</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="reportThreshold">Stock Threshold (<):</label>
+            <input type="number" id="reportThreshold" value="5" min="1">
+          </div>
+          <button id="runReportBtn" class="btn btn-secondary">Generate Report</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Summary Reports Output -->
+    <section class="section-block">
+      <h2>System Execution Logs & Output Reports</h2>
+      <div class="logs-container" id="logsOutput">
+        <p class="placeholder-text">Click "Process Pending Orders Batch" or "Generate Report" to view results...</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

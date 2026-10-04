@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Result Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="dashboard-header">
+      <div class="header-brand">
+        <h1>🎓 Student Result Dashboard</h1>
+        <p>JavaScript Fundamentals & Student Performance Analytics</p>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search student by name...">
+      </div>
+    </header>
+
+    <!-- Summary Statistics Cards -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Class Average</span>
+        <h2 id="classAverage">0%</h2>
+        <span class="stat-subtext">Overall score</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Top Scorer</span>
+        <h2 id="topScorer">N/A</h2>
+        <span class="stat-subtext" id="topScorerMarks">Marks: -</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Pass Rate</span>
+        <h2 id="passCount">0 / 0</h2>
+        <span class="stat-subtext" id="passPercentage">0% passing</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Failed Students</span>
+        <h2 id="failCount">0</h2>
+        <span class="stat-subtext">Requires review</span>
+      </div>
+    </section>
+
+    <!-- Filter & Controls -->
+    <section class="controls-bar">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All Students</button>
+        <button class="filter-btn" data-filter="pass">Passed</button>
+        <button class="filter-btn" data-filter="fail">Failed</button>
+      </div>
+      <div class="sort-group">
+        <label for="sortSelect">Sort By:</label>
+        <select id="sortSelect">
+          <option value="id">Default (ID)</option>
+          <option value="marks-desc">Marks (High to Low)</option>
+          <option value="marks-asc">Marks (Low to High)</option>
+          <option value="name">Name (A-Z)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Dynamic Cards Grid -->
+    <main class="cards-grid" id="cardsGrid"></main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
